@@ -1,0 +1,15 @@
+export default [
+  { id: 1, name: 'PS3' },
+  { id: 2, name: 'PS4' },
+  { id: 3, name: 'Xbox 360' },
+  { id: 4, name: 'Xbox One' },
+  { id: 5, name: 'iOS' },
+  { id: 6, name: 'Android' },
+  { id: 7, name: 'Browser' },
+  { id: 8, name: 'AR' },
+  { id: 9, name: 'DS' },
+  { id: 10, name: 'PSP' },
+  { id: 11, name: 'VR' },
+  { id: 12, name: 'PC' },
+  { id: 13, name: 'Other' },
+];

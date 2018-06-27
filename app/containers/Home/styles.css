@@ -1,0 +1,130 @@
+/*
+ * Home styles
+ */
+
+.root {
+  text-align: center;
+}
+
+.full,
+.left,
+.right {
+  width: 100%;
+  background-size: cover;
+  /*border-bottom: 2px solid black;*/
+}
+
+.full {
+  background-position: 30%;
+  text-align: center;
+  display: flex;
+  height: 26rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    margin-bottom: 1.5rem;
+    max-width: 80%;
+  }
+  p {
+    font-size: 1.125rem;
+  }
+  .button {
+    margin-top: 0.5rem;
+    padding: 0.6rem 5rem;
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+}
+
+.left,
+.right {
+  height: 12rem;
+  padding: 0 1.5rem;
+  display: flex;
+  background-position: 50%;
+  align-items: center;
+  h2 {
+    color: $yellow;
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+  p {
+    max-width: 18rem;
+    line-height: 1.25;
+    margin-bottom: 0;
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+@media (min-width: $sm) {
+  .full {
+    height: 32rem;
+    p {
+      font-size: 1.15rem;
+    }
+    .button {
+      padding: 0.75rem 5.5rem;
+    }
+  }
+  .left,
+  .right {
+    height: 12.5rem;
+    padding: 0 2rem;
+    h2 {
+      font-size: 1.75rem;
+    }
+    p {
+      font-size: 1.15rem;
+      max-width: 20rem;
+    }
+  }
+}
+
+@media (min-width: $md) {
+  .full {
+    height: 42rem;
+    h1 {
+      font-size: 2.75rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    .button {
+      background-color: $yellow;
+      opacity: 0.85;
+      border-radius: 8px;
+      padding: 1rem 6.5rem;
+      margin-top: 1rem;
+      &:hover,
+      &:focus {
+        background-color: $yellow;
+      }
+    }
+  }
+  .left,
+  .right {
+    height: 16rem;
+    padding: 0 4rem;
+    text-align: center;
+    background-position: 0%;
+    h2 {
+      font-size: 1.875rem;
+    }
+    p {
+      font-size: 1.5rem;
+      max-width: 25rem;
+    }
+  }
+}

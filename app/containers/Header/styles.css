@@ -1,0 +1,414 @@
+/*
+ * Header styles
+ */
+
+.root {
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 99999;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background: $grey3;
+  &:not(.home) .nav a:not(:first-child) {
+    display: none;
+  }
+  &.home .nav a {
+    font-size: 0.875rem;
+    &:first-of-type {
+      display: none;
+    }
+  }
+}
+
+
+.navbar-fixed-background{
+  background-color: #323232 !important;
+}
+
+.transparent {
+  background: transparent !important;;
+}
+
+.home {
+  background: transparent !important;
+}
+
+.logo {
+  width: 2rem;
+}
+
+.nav a,
+.toggle {
+  cursor: pointer;
+  color: $white;
+  padding: 0.5rem 0;
+  transition: color 0.4s ease-out;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.nav a {
+  font-size: 0.875rem;
+  i {
+    font-size: 1.25rem;
+  }
+}
+
+.toggle {
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  padding: 0;
+  text-align: right;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1.5rem;
+  height: 1rem;
+  & > div {
+    width: 22px;
+    height: 1px;
+    background-color: $white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    &:nth-of-type(2) {
+      top: 7px;
+    }
+    &:nth-of-type(3) {
+      top: 14px;
+    }
+  }
+}
+
+.blank {
+  width: 1.75rem;
+}
+
+.menu {
+  align-items: center;
+  display: none;
+  height: 100%;
+  z-index: 200;
+  min-width: 11rem;
+  padding: 0 1.25rem;
+  background: transparent;
+  transition: background 0.4s ease-out;
+  &:hover,
+  &:focus {
+    background: #2D2D2D;
+    & > a {
+      color: $yellow;
+    }
+  }
+  &.active {
+    background: $grey2;
+    & > a {
+      color: $yellow;
+      &::after {
+        border-left: 0.3rem solid transparent;
+        border-right: 0.3rem solid transparent;
+        border-bottom: 0.35rem solid $yellow2;
+        border-top: 0;
+      }
+    }
+    :global(.dd-menu-items) {
+      border-top: 1px solid $grey1;
+    }
+  }
+  button {
+    width: calc(100% - 2rem);
+    padding: 0.5rem 0;
+    margin: 0.75rem 0;
+  }
+  small {
+    color: $yellow;
+    padding-left: 0.4rem;
+  }
+  & > a {
+    height: 100%;
+    padding: 0 1.75rem;
+    color: $white;
+    min-width: 100%;
+    white-space: nowrap;
+    justify-content: center;
+    text-transform: capitalize;
+    letter-spacing: 0;
+    &::after {
+      width: 0;
+      height: 0;
+      content: '';
+      margin-top: 0.15rem;
+      margin-left: 0.75rem;
+      transition: border 0.15s;
+      border-left: 0.3rem solid transparent;
+      border-right: 0.3rem solid transparent;
+      border-top: 0.35rem solid #656565;
+    }
+  }
+}
+
+.avatar {
+  max-width: 2.75rem;
+  margin-right: 0.75rem;
+}
+
+.nav.home a > div {
+    background-color: #F8E81C;
+    opacity: 0.85;
+    border-radius: 8px;
+    /*padding: 0.6rem 1.5rem;*/
+    color: black;
+    display: inline-block;
+    font-weight: 500;
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+}
+
+.nav a > div {
+    background-color: #F8E81C;
+    opacity: 0.85;
+    border-radius: 8px;
+    /*padding: 0.6rem 1.5rem;*/
+    padding: 0.6rem 1.5rem 0.43rem 1.5rem;
+    color: black;
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+}
+.nav > .menu > a > div {
+    background-color:black !important;
+    opacity: 0.85;
+    border-radius: 50% !important;
+    /*padding: 0.6rem 1.5rem;*/
+    padding: 0px !important;
+    color:  #F8E81C !important;
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+    img {
+      height: auto;
+      width: 100%;
+    }
+}
+
+@media (min-width: $sm) {
+  .root {
+    height: 5rem;
+    padding: 0 2.5rem;
+    &:not(.home) .nav a {
+      font-size: 0.825rem;
+      &:not(:first-child) {
+        display: inline-flex;
+      }
+    }
+    &.home .nav a:first-of-type {
+      display: inline-flex;
+    }
+  }
+  
+  .toggle {
+    display: none;
+  }
+
+  .nav,
+  .nav a {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+  }
+  .nav a {
+    padding: 0 1rem;
+    margin-left: 0;
+    i {
+      font-size: 1rem;
+      vertical-align: text-bottom;
+    }
+    &.active {
+      color: $yellow;
+      border-bottom: 1px solid $yellow;
+    }
+  }
+  .menu {
+    display: inline-flex;
+    padding: 0 1.5rem;
+  }
+  .nav:not(.home) > a {
+    transition: color 0.4s ease-out, background 0.4s ease-out;
+    &:hover {
+      color: $yellow;
+      background: #2D2D2D;
+    }
+  }
+  .nav.home a:hover,
+  .nav.home a:focus {
+    color: $yellow;
+  }
+}
+
+@media (max-width: 375px) {
+  .root {
+    &.home .nav a {
+      font-size: 0.675rem;
+    }
+  }
+  .nav a div {
+    padding: 0.6rem 0.5rem 0.43rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) and (min-width: 375px) {
+  .root {
+    &.home .nav a {
+       font-size: 0.875rem;
+     }
+    }
+    .nav a div {
+      padding: 0.6rem 0.9rem 0.43rem 0.9rem;
+    }
+}
+@media (max-width: 320px) {
+  .root {
+    &.home .nav a {
+      font-size: 0.575rem;
+    }
+  }
+  .nav a div {
+    padding: 0.6rem 0.5rem 0.43rem 0.5rem;
+  }
+}
+ 
+@media (min-width: $md) {
+  .logo {
+    width: 2.2rem;
+  }
+  .nav a {
+    padding: 0 1.5rem;
+  }
+}
+
+:global {
+  .dd-menu {
+    position: relative;
+  }
+  .dd-menu .dd-menu-items {
+    top: 5rem;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+    ul,
+    ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: #FFF;
+      font-size: 0.825rem;
+      font-weight: 400;
+      background-color: $grey2;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.29);
+    }
+    li {
+      position: relative;
+      text-align: left;
+      text-transform: uppercase;
+      transition: background 0.4s ease-out;
+      &:first-of-type a {
+        padding-top: 1rem;
+        border-top: 1px solid $grey1;
+      }
+      &:last-of-type a {
+        padding-bottom: 1rem;
+      }
+      &:hover {
+        background-color: #212121;
+      }
+    }
+    a {
+      padding: 0.5rem 1rem;
+      display: block;
+      letter-spacing: 0;
+    }
+  }
+  .grow-from-center-enter,
+  .grow-from-center-leave {
+    animation-fill-mode: both;
+    backface-visibility: visible;
+    transform-origin: top;
+  }
+  .grow-from-center-enter {
+    animation-duration: 0.15s;
+    -webkit-animation-name: flipIn;
+    animation-name: flipIn;
+  }
+  .grow-from-center-leave {
+    animation-duration: 0.15s;
+    -webkit-animation-name: flipOut;
+    animation-name: flipOut;
+  }
+}
+
+@-webkit-keyframes :global(flipIn) {
+  from {
+    opacity: 0;
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -90deg);
+    -webkit-animation-timing-function: ease-in;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: perspective(400px);
+  }
+}
+
+@keyframes :global(flipIn) {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotate3d(1, 0, 0, -90deg);
+    animation-timing-function: ease-in;
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px);
+  }
+}
+
+@-webkit-keyframes :global(flipOut) {
+  from {
+    opacity: 1;
+    -webkit-transform: perspective(400px);
+    -webkit-animation-timing-function: ease-in;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -90deg);
+  }
+}
+
+@keyframes :global(flipOut) {
+  from {
+    opacity: 1;
+    transform: perspective(400px);
+    animation-timing-function: ease-in;
+  }
+  to {
+    opacity: 0;
+    transform: perspective(400px) rotate3d(1, 0, 0, -90deg);
+  }
+}

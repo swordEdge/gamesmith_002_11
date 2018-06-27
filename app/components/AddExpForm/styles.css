@@ -1,0 +1,9 @@
+/*
+ * Add experience form styles
+ */
+
+.root {
+  p:first-of-type {
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,207 @@
+/*
+ * Game card styles
+ */
+
+.root {
+  position: relative;
+  margin-bottom: 1.5rem;
+  button {
+    display: none;
+  }
+}
+
+.root,
+.content,
+.overlay {
+  border-radius: 1rem;
+}
+
+.root,
+.content {
+  width: 100%;
+  min-height: 20rem;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-color: $grey3;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.info,
+.extra {
+  z-index: 10;
+}
+
+.info {
+  padding: 3rem 2rem;
+  h1 {
+    margin: 0;
+    font-weight: 400;
+  }
+  i {
+    color: $grey4;
+    margin-right: 0.5rem;
+  }
+  p {
+    margin: 0.75rem 0 0;
+    color: $grey4;
+    font-size: 1.25rem;
+  }
+}
+
+.extra {
+  display: none;
+}
+
+.avatar {
+  height: 50px;
+  width: 50px;
+  display: inline-flex;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.makers {
+  margin-top: 2.5rem;
+  p {
+    margin-top: 1rem;
+  }
+  a:not(:last-of-type) .avatar {
+    margin-right: 0.75rem;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: $grey3;
+  opacity: 0.65;
+}
+
+@media (min-width: $md) {
+  .root {
+    display: flex;
+    padding-right: 2.5rem;
+    &:hover,
+    &:focus {
+      button {
+        width: 2.8rem;
+        background: $yellow;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+      }
+    }
+    button {
+      display: block;
+      width: 2.5rem;
+      z-index: 20;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      background: $yellow2;
+      transition: all 0.25s ease-out;
+      i {
+        color: $grey1;
+        margin: 0;
+      }
+    }
+  }
+  .root button,
+  .overlay {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  .root,
+  .overlay,
+  .content {
+    border-radius: 0;
+  }
+  .root,
+  .content {
+    min-height: 8rem;
+  }
+  .content {
+    flex-direction: row;
+  }
+  .info {
+    flex: 1;
+    h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+  }
+  .makers {
+    margin-top: 1.5rem;
+    p {
+      font-size: 1rem;
+      display: inline-block;
+      margin: 0.75rem;
+    }
+    a:not(:last-of-type) .avatar {
+      margin-right: 1.25rem;
+    }
+  }
+  .info,
+  .extra {
+    height: 100%;
+    width: auto;
+    display: inline-flex;
+    padding: 1.5rem 1rem 1.5rem 2.5rem;
+    text-align: left;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .extra {
+    /*if there is a need for the black block on the games card, uncomment the next line */
+    /*background: #262626;*/
+    /* if there is a need for a line to separate game info and company, uncomment next line*/
+    /*border-left: 1px solid black;*/
+    flex-basis: 16rem;
+    p {
+      color: $white;
+      font-size: 1.25rem;
+      margin: 0;
+    }
+  }
+  .studio {
+    display: none;
+  }
+}
+
+@media (min-width: $lg) {
+  .extra {
+    flex-basis: 18rem;
+  }
+  .makers {
+    p {
+      margin: 1rem;
+    }
+    a:not(:last-of-type) .avatar {
+      margin-right: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .extra {
+    flex-basis: 22rem;
+  }
+}
+
+@media (min-width: $xl) {
+  .extra {
+    flex-basis: 26rem;
+  }
+}

@@ -1,0 +1,25 @@
+/*
+ * {{ properCase name }} component
+ */
+
+import React, { PropTypes } from 'react';
+
+{{#if wantCSS}}
+import s from './styles.css';
+{{/if}}
+
+const {{ properCase name }} = () => (
+  {{#if wantCSS}}
+  <div className={{curly true}}s.root{{curly}}>
+  {{else}}
+  <div>
+  {{/if}}
+    {{ properCase name }} component
+  </div>
+);
+
+{{ properCase name }}.propTypes = {
+  prop: PropTypes.string,
+};
+
+export default {{ properCase name }};

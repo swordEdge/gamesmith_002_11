@@ -1,0 +1,24 @@
+/*
+ * Avatar styles
+ */
+
+.wrapper {
+  height: 2.75rem;
+  width: 2.75rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $grey1;
+  div {
+    color: $yellow;
+    line-height: 1;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+  }
+  img {
+    height: auto;
+    width: 100%;
+  }
+}

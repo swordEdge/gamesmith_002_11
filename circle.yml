@@ -1,0 +1,40 @@
+machine:
+  environment:
+    AWS_DEFAULT_REGION: us-west-2
+  node:
+    version: v6.9.4
+dependencies:
+  pre:
+    - npm install -g npm@4.1.1
+    - pip install --upgrade awscli awsebcli
+    - git config --global user.name "Circle CI Build"
+    - git config --global user.email "alex@gamesmith.com"
+test:
+  override:
+    - npm run build
+  post:
+    - "[ -d node_modules/ngrok ] && rm -rf node_modules/ngrok"
+    - sed -i.bak '/ngrok/d' package.json || rm package.json.bak
+    - rm .gitignore
+    - git add --all .
+    - git diff-index --quiet HEAD -- || git commit -am "Build $CIRCLE_BUILD_NUM at $CIRCLE_BUILD_URL"
+deployment:
+  release:
+    tag: /release-v.*/
+    heroku:
+      appname: gamesmith
+#    commands:
+#      - eb deploy gs-production-frontend
+# heroku force:
+#      - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
+#      - git push --force git@heroku.com:gamesmith.git $CIRCLE_SHA1:refs/heads/master
+#  heroku default
+#    commands:
+  develop:
+    branch: develop
+    commands:
+      - eb deploy gs-staging-frontend
+  master:
+    branch: master
+    commands:
+      - eb deploy gs-production-frontend

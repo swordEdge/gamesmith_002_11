@@ -1,0 +1,9 @@
+/*
+ * Availability form styles
+ */
+
+.root {
+  & > p {
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,163 @@
+/*
+ * Jobs styles
+ */
+
+.root {
+  padding-top: 4rem;
+  text-align: center;
+}
+
+.top {
+  max-width: 68rem;
+}
+
+.top > i {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+
+.top {
+  position: relative;
+  padding: 0 2rem;
+  margin: 1.5rem auto;
+  & > i {
+    left: 2rem;
+    font-size: 1.5rem;
+  }
+  h1 {
+    margin: 0;
+    font-weight: 400;
+  }
+}
+
+.nav {
+  height: 4rem;
+  display: flex;
+  padding: 0 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $grey3;
+  i {
+    margin-right: 1rem;
+  }
+}
+
+.studioMargin{
+  margin-top: 3rem !important;
+}
+.customPadding{
+  padding: 1rem;
+}
+
+.contentPadding{
+  padding-left: 13rem;
+  font-size: 14px;
+}
+
+.floating{
+  float: left;
+}
+
+.yellow{
+  color: yellow;
+}
+
+.content {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  & > div:first-child > div {
+      background-color: rgb(50, 50 ,50);
+      padding: 0.2em 0.4em;
+      padding-bottom: 2rem;
+      margin: 1em auto;
+      margin-top: 0em;
+      border-radius: 0.5em;
+  }
+  & > div:not(:first-child) {
+    width: 40%;
+    padding: 1.5rem;
+    margin-left: 0em;
+    background-color: rgb(50, 50, 50);
+    border-radius: 0.5em;
+    float: right;
+  }
+}
+
+@media (max-width: $sm) {
+  .root {
+    padding-top: 5rem;
+  }
+  .top {
+    margin: 2rem auto 1.5rem;
+  }
+  .content {
+    margin-bottom: 36rem;
+    .floating{
+      float: none;
+    }
+    .contentPadding{
+      padding: 1rem;
+    }
+    & > div {
+      margin: 0 4%;
+      width: 90%;
+    }
+    & > div:first-child {
+          width: 90%;
+    }
+    & > div:not(:first-child) {
+      margin-top: 2rem;
+      margin-right: 1.8rem;
+      width: 90%;
+    }
+  }
+}
+
+@media (min-width: $sm) {
+  .root {
+    padding-top: 5rem;
+  }
+  .top {
+    margin: 2rem auto 1.5rem;
+  }
+  .content {
+    margin-bottom: 36rem;
+    & > div {
+      margin: 0 4%;
+    }
+    & > div:first-child {
+      width: 90%;
+    }
+    & > div:not(:first-child) {
+      margin-top: 2rem;
+      margin-right: 2.3rem;
+      width: 90%;
+    }
+  }
+}
+
+@media (min-width: $md) {
+  .top {
+    margin: 2.5rem auto 2rem;
+    & > i {
+      display: none;
+    }
+  }
+  .content {
+    margin-bottom: 5rem;
+    & > div {
+      display: inline-block;
+      margin: 0 3%;
+    }
+    & > div:first-child {
+      width: 45%;
+    }
+    & > div:not(:first-child) {
+      margin-top: 0rem;
+      margin: auto auto;
+      margin-right: 2rem;
+      width: 45%;
+    }
+  }
+}

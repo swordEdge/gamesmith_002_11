@@ -1,0 +1,226 @@
+/*
+ * Game Details card styles
+ */
+
+.root {
+  position: relative;
+  margin-bottom: 2rem;
+  a {
+    height: 100%;
+    display: block;
+  }
+  .buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .buttoner {
+      min-width: 4rem;
+      border: none;
+      padding: 0;
+      font-size: 0.8rem;
+    }
+    .buttoner:hover {
+      border: none;
+      box-shadow: none;
+      color: white;
+    }
+  .gameCard {
+    color:white;
+  }
+
+  .verifyButton {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .verifyCheck {
+    color: #e8d603;
+  }
+  .location {
+    color: lightgrey;
+  }
+}
+
+
+.root,
+.content,
+.overlay {
+  border-radius: 1rem;
+}
+
+.root,
+.content {
+  width: 100%;
+  min-height: 20rem;
+}
+
+.content {
+  position: relative;
+  background-color: $grey3;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  & > *:not(.overlay) {
+    z-index: 10;
+  }
+  h1 {
+    margin: 0;
+    font-weight: 400;
+  }
+  i {
+    color: $grey4;
+    margin-right: 0.5rem;
+  }
+  p {
+    margin: 0.75rem 0 0;
+    color: $grey4;
+    font-size: 1.25rem;
+    &:nth-of-type(2) {
+      color: $white;
+      margin-top: 2rem;
+    }
+  }
+}
+
+.button {
+  border: none;
+}
+
+.platforms {
+  margin-top: 0.5rem;
+}
+
+.extra {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: $grey3;
+  opacity: 0.65;
+}
+
+@media (min-width: $md) {
+  .root {
+    margin-bottom: 1.5rem;
+  }
+  .root,
+  .overlay,
+  .content {
+    border-radius: 0;
+  }
+  .root,
+  .content {
+    min-height: 8rem;
+  }
+  .content {
+    flex: 1;
+    p:nth-of-type(1) {
+      margin: 0;
+    }
+    p:nth-of-type(2),
+    p:nth-of-type(3) {
+      display: none;
+    }
+    p:nth-of-type(1),
+    h1 {
+      font-size: 1.25rem;
+    }
+    p {
+      margin: 0.65rem 0 0;
+    }
+  }
+  .root button,
+  .overlay {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  .root {
+    &:hover,
+    &:focus {
+      button {
+        width: 2.8rem;
+        background: $yellow;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+      }
+    }
+    button {
+      display: block;
+      width: 2.5rem;
+      z-index: 20;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      background: $yellow2;
+      transition: all 0.25s ease-out;
+      i {
+        color: $grey1;
+        margin: 0;
+      }
+    }
+    & > a {
+      display: flex;
+      pointer: none;
+      /*padding-right: 2.5rem;*/
+    }
+  }
+  .content {
+    background-color: #101010;
+  }
+  .content,
+  .extra {
+    width: auto;
+    display: inline-flex;
+    padding: 1rem 1.5rem 1rem 2rem;
+    text-align: left;
+    align-items: flex-start;
+  }
+  .extra {
+    z-index: 10;
+    flex-basis: 12rem;
+    max-width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    background: $grey3;
+    p {
+      font-size: 1.25rem;
+      margin: 0;
+      &:nth-of-type(2) {
+        font-size: 1rem;
+        margin-top: 0.65rem;
+      }
+      i {
+        font-size: 0.9rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: $lg) {
+  .extra {
+    flex-basis: 12rem;
+  }
+  .content,
+  .extra {
+    padding: 1rem 1.5rem 1rem 2.5rem;
+  }
+}
+
+@media (min-width: $xl) {
+  .extra {
+    flex-basis: 14rem;
+  }
+}

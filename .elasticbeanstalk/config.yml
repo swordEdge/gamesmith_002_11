@@ -1,0 +1,9 @@
+branch-defaults:
+  develop:
+    environment: gs-staging-frontend
+global:
+  application_name: frontend
+  default_ec2_keyname: devops-maintenance
+  default_platform: 64bit Amazon Linux 2016.09 v2.5.0 running Docker 1.12.6
+  default_region: us-west-2
+  sc: git

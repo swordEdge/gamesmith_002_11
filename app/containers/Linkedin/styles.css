@@ -1,0 +1,42 @@
+/*
+* Linkedin styles
+*/
+
+.root {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 4rem;
+  h2 {
+    font-size: 1.5rem;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+  pre {
+    overflow: auto;
+    width: 24rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  ::-webkit-scrollbar {
+    height: 0.75rem;
+  }
+  ::-webkit-scrollbar-track {
+    background: $grey3;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $grey4;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: $grey4;
+  }
+}
+
+@media (min-width: $sm) {
+  .root {
+    padding-top: 5rem;
+  }
+}

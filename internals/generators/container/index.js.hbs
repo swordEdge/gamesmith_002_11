@@ -1,0 +1,50 @@
+/*
+ * {{ properCase name }} container
+ */
+
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+{{#if wantHeaders}}
+import Helmet from 'react-helmet';
+{{/if}}
+{{#if wantActionsAndReducer}}
+
+import select{{properCase name}} from './selectors';
+{{/if}}
+{{#if wantCSS}}
+
+import s from './styles.css';
+{{/if}}
+
+const {{ properCase name }} = ({ params }) => ( // eslint-disable-line no-unused-vars
+  {{#if wantCSS}}
+  <main role="main" className={{curly true}}s.root{{curly}}>
+  {{else}}
+  <main role="main">
+  {{/if}}
+    {{#if wantHeaders}}
+    <Helmet
+      title="{{properCase name}}"
+      meta={{curly true}}[
+        {{curly true}} name: 'description', content: 'Description of {{properCase name}}' {{curly}},
+      ]{{curly}}
+    />
+    {{/if}}
+    This is the {{properCase name}} container
+  </main>
+);
+
+{{ properCase name }}.propTypes = {
+  params: PropTypes.object.isRequired,
+};
+
+{{#if wantActionsAndReducer}}
+export default connect(
+  select{{properCase name}}(),
+  dispatch => ({
+    dispatch,
+  })
+)({{ properCase name }});
+{{else}}
+export default {{ properCase name }};
+{{/if}}

@@ -1,0 +1,89 @@
+/*
+ * Footer styles
+ */
+
+.root {
+  width: 100%;
+  height: 4.5rem;
+  display: flex;
+  color: $grey4;
+  background: $grey3;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  a {
+    padding: 0.5rem 0;
+  }
+}
+
+.info a {
+  color: $grey4;
+  &:not(:last-of-type) {
+    margin-right: 1.5rem;
+  }
+  &[href]:hover,
+  &[href]:focus {
+    color: $white;
+  }
+  &:not([href]) {
+    cursor: auto;
+  }
+}
+
+.nav {
+  a {
+    color: $white;
+    margin-right: 0;
+    margin-left: 1.5rem;
+    &:not(:first-of-type) {
+      margin-left: 1.5rem;
+    }
+    &:hover,
+    &:focus {
+      color: $yellow;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .root {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: $md) {
+  .info a[href] {
+    display: none;
+  }
+}
+
+@media (min-width: $md) and (max-width: $lg) {
+  .info a:last-of-type {
+    display: none;
+  }
+}
+
+@media (min-width: $sm) {
+  .root {
+    height: 6rem;
+    padding: 0 2.5rem;
+  }
+  .info a:not(:last-of-type) {
+    margin-right: 2.5rem;
+  }
+  .nav a:not(:first-of-type) {
+    margin-left: 2.5rem;
+  }
+}
+
+@media (min-width: $lg) {
+  .root {
+    padding: 0 1rem;
+  }
+  .info a:not(:last-of-type) {
+    margin-right: 3rem;
+  }
+  .nav a:not(:first-of-type) {
+    margin-left: 3rem;
+  }
+}

@@ -1,0 +1,16 @@
+/*
+ * {{ properCase name }} selectors
+ */
+
+import { createSelector } from 'reselect';
+
+// Direct selector to the {{ camelCase name }} state domain
+const select{{ properCase name }}Domain = () => state => state.get('{{ camelCase name }}');
+
+// Default selector used by {{ properCase name }}
+const select{{ properCase name }} = () => createSelector(
+  select{{ properCase name }}Domain(),
+  substate => substate.toJS()
+);
+
+export default select{{ properCase name }};

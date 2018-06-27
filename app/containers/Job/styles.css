@@ -1,0 +1,153 @@
+/*
+ * Job page styles
+ */
+
+.root {
+  padding-top: 4rem;
+  text-align: center;
+}
+
+.top,
+.nav {
+  margin: auto;
+  max-width: 68rem;
+}
+
+.top {
+  padding: 0 2rem;
+  margin: 2rem auto;
+  h1 {
+    margin: 0;
+    font-weight: 400;
+  }
+}
+
+.job {
+  padding: 1rem 2rem 4rem;
+  margin: auto;
+  max-width: 46rem;
+}
+
+.data {
+  padding: 2rem;
+  text-align: left;
+  background: $grey3;
+  h2,
+  h3,
+  h4 {
+    text-align: center;
+  }
+  h2,
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+  h3,
+  h4 {
+    color: $grey4;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  h4 {
+    margin-bottom: 2.5rem;
+  }
+  i {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+  ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    list-style: disc;
+  }
+  li,
+  b {
+    color: $grey4;
+  }
+  b {
+    margin-top: 1rem;
+    display: inline-block;
+  }
+  .nologo {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+
+.buttonContainer {
+  text-align: center;
+}
+
+.button {
+  display: block;
+  margin: 3rem auto 1rem;
+}
+
+.buttons {
+  margin: 1rem;
+}
+
+.logo {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #272727;
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  img {
+    max-width: 18rem;
+  }
+}
+
+.description {
+  text-indent: 50px;
+  white-space: pre-line;
+}
+
+.nav {
+  height: 4rem;
+  display: flex;
+  padding: 0 2rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $grey3;
+  i {
+    margin-right: 1rem;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: $sm) {
+  .root {
+    padding-top: 5rem;
+  }
+  .top {
+    margin: 2rem auto 1.5rem;
+  }
+}
+
+@media (min-width: $md) {
+  .top {
+    margin: 2.5rem auto 2rem;
+  }
+}
+
+@media (min-width: $lg) {
+  .nav {
+    width: 100%;
+    border: none;
+    left: 50%;
+    top: 7.25rem;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}

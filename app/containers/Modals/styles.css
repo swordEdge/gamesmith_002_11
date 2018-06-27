@@ -1,0 +1,29 @@
+/*
+ * Modal styles
+ */
+
+.signin {
+  :global(.btn) {
+    margin: 1rem 0;
+  }
+}
+.signup {
+  :global(.btn) {
+    margin: 1rem 0;
+  }
+}
+
+.directsignup {
+  :global(.btn) {
+    margin: 1rem 0;
+  }
+}
+.editemail {
+  :global(.btn) {
+    margin: 1rem 0;
+  }
+}
+
+.buttons {
+  margin: 1rem;
+}

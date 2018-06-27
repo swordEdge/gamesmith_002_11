@@ -1,0 +1,12 @@
+coverage
+build
+node_modules
+stats.json
+.DS_Store
+npm-debug.log
+
+mock.json
+
+# Elastic Beanstalk Files
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

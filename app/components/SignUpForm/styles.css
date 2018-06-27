@@ -1,0 +1,17 @@
+/*
+ * Employer form styles
+ */
+ .root {
+ 	margin: 0 5%;
+ }
+
+.first {
+  	display: inline-block;
+  	width: 43%;
+  	margin-right: 2%; 
+}
+
+.last {
+ 	display: inline-block; 
+ 	width: 55%;
+}
